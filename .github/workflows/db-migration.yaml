@@ -17,7 +17,7 @@ jobs:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_DB: neurowatch-аднцфн
+          POSTGRES_DB: neurowatch-flyway
           POSTGRES_USER: neurowatch_user
           POSTGRES_PASSWORD: mypassword
         ports:
