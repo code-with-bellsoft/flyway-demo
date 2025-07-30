@@ -6,11 +6,11 @@ services:
     environment:
       POSTGRES_USER: neurowatch_user
       POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: neurowatch
+      POSTGRES_DB: neurowatch-flyway
     ports:
       - "5432:5432"
     volumes:
-      - neurowatch_db_data:/var/lib/postgresql/data
+      - neurowatch_db_data:/var/lib/postgresql/data-flyway
     networks:
       - neurowatch_net
 
@@ -19,6 +19,3 @@ volumes:
 
 networks:
   neurowatch_net:
-
-
-
