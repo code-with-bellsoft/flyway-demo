@@ -1,0 +1,3 @@
+INSERT INTO civilian (id, legal_name, national_id, birth_date, criminal_record, under_surveillance) VALUES (1, 'Aelita Fang', 'IZ-0965437-BM', '1999-08-30', FALSE, FALSE);
+INSERT INTO cyberware (id, name, type, version) VALUES (1, 'OptiSight X3', 'ocular', 'SZ 3000');
+INSERT INTO implant_session (id, civilian_id, cyberware_id, installed_at, installed_by) VALUES (1, 1, 1, '2025-06-15', 'MP-129854');
