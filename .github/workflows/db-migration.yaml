@@ -15,10 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FLYWAY_URL:      ${{ secrets.DB_URL }}
-      FLYWAY_USER:     ${{ secrets.DB_USER }}
-      FLYWAY_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      FLYWAY_SCHEMAS:  ${{ secrets.DB_SCHEMA }}
+      FLYWAY_URL:      jdbc:postgresql://localhost:5432/neurowatch-flyway
+      FLYWAY_USER:     neurowatch_user
+      FLYWAY_PASSWORD: mypassword
 
     steps:
       - name: Checkout repository
