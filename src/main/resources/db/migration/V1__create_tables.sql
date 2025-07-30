@@ -1,0 +1,3 @@
+CREATE TABLE civilian (
+id BIGINT PRIMARY KEY,
+);
