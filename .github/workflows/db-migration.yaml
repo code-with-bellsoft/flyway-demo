@@ -32,6 +32,7 @@ jobs:
       FLYWAY_URL:      jdbc:postgresql://localhost:5432/neurowatch-flyway
       FLYWAY_USER:     neurowatch_user
       FLYWAY_PASSWORD: mypassword
+      FLYWAY_SCHEMA: neurowatch-flyway
 
     steps:
       - name: Checkout repository
