@@ -1,0 +1,50 @@
+name: Flyway Migrations
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: flyway-migrations-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    env:
+      FLYWAY_URL:      ${{ secrets.DB_URL }}
+      FLYWAY_USER:     ${{ secrets.DB_USER }}
+      FLYWAY_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      FLYWAY_SCHEMAS:  ${{ secrets.DB_SCHEMA }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Process Resources
+        shell: bash
+        run: |
+          ./mvnw process-resources
+
+      - name: Set up JDK 24
+        uses: actions/setup-java@v4
+        with:
+          distribution: liberica
+          java-version: '24'
+          cache: maven
+
+      - name: Flyway validate
+        run: mvn -B flyway:validate
+
+      - name: Flyway migrate
+        run: mvn -B flyway:migrate
+
+      - name:  Run tests
+        run: ./mvnw test
+
+      - name: Deploy app
+        if: success()
+        run: echo "Deploy your app here..."
