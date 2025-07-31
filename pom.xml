@@ -66,9 +66,9 @@
                     <user>neurowatch_user</user>
                     <password>mypassword</password>
                     <url>jdbc:postgresql://localhost:5432/neurowatch-flyway</url>
-                    <schemas>
-                        <schema>neurowatch-flyway</schema>
-                    </schemas>
+<!--                    <schemas>-->
+<!--                        <schema>neurowatch-flyway</schema>-->
+<!--                    </schemas>-->
                 </configuration>
             </plugin>
         </plugins>
