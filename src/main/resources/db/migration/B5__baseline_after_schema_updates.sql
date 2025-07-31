@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS cyberware (
         name VARCHAR(100),
         type VARCHAR(50),
         version VARCHAR(50),
-        manufacturer VARCHAR(100);
+        manufacturer VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS implant_session (
