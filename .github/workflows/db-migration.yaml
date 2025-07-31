@@ -32,6 +32,7 @@ jobs:
       FLYWAY_URL:      jdbc:postgresql://localhost:5432/neurowatch-flyway
       FLYWAY_USER:     neurowatch_user
       FLYWAY_PASSWORD: mypassword
+      FLYWAY_PLACEHOLDERS_BUILD_TIMESTAMP: "${{ github.run_id }}-${{ github.run_attempt }}"
 
     steps:
       - name: Checkout repository
@@ -50,7 +51,10 @@ jobs:
           cache: maven
 
       - name: Flyway migrate and validate
-        run: mvn -B flyway:migrate flyway:validate
+        run: mvn -B flyway:migrate
+
+      - name: Flyway validate
+        run: mvn -B flyway:validate
 
       - name:  Run tests
         run: ./mvnw test

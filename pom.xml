@@ -68,6 +68,7 @@
                     <url>jdbc:postgresql://localhost:5432/neurowatch-flyway</url>
                     <placeholders>
                         <seed_demo_data>true</seed_demo_data>
+                        <build_timestamp>${env.BUILD_TS}</build_timestamp>
                     </placeholders>
                 </configuration>
             </plugin>

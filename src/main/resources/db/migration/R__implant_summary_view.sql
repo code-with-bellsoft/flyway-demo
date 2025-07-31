@@ -1,4 +1,4 @@
--- ${flyway:timestamp}
+-- ${build_timestamp}
 -- Repeatable migration: (re)create a view joining all three tables.
 
 CREATE OR REPLACE VIEW v_implant_summary AS
