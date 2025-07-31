@@ -49,11 +49,8 @@ jobs:
           java-version: '24'
           cache: maven
 
-      - name: Flyway migrate
-        run: mvn -B flyway:migrate
-
-      - name: Flyway validate
-        run: mvn -B flyway:validate
+      - name: Flyway migrate and validate
+        run: mvn -B flyway:migrate flyway:validate
 
       - name:  Run tests
         run: ./mvnw test
