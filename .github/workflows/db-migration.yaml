@@ -49,11 +49,11 @@ jobs:
           java-version: '24'
           cache: maven
 
-      - name: Flyway validate
-        run: mvn -B flyway:validate
-
       - name: Flyway migrate
         run: mvn -B flyway:migrate
+
+      - name: Flyway validate
+        run: mvn -B flyway:validate
 
       - name:  Run tests
         run: ./mvnw test
