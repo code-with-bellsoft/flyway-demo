@@ -1,5 +1,5 @@
 -- Snapshot after V4
-CREATE TABLE civilian (
+CREATE TABLE IF NOT EXISTS civilian (
         id BIGINT PRIMARY KEY,
         legal_name VARCHAR(250),
         national_id VARCHAR(50),
@@ -9,7 +9,7 @@ CREATE TABLE civilian (
         under_surveillance BOOLEAN
 );
 
-CREATE TABLE cyberware (
+CREATE TABLE IF NOT EXISTS cyberware (
         id BIGINT PRIMARY KEY,
         name VARCHAR(100),
         type VARCHAR(50),
@@ -17,7 +17,7 @@ CREATE TABLE cyberware (
         manufacturer VARCHAR(100);
 );
 
-CREATE TABLE implant_session (
+CREATE TABLE IF NOT EXISTS implant_session (
         id BIGINT PRIMARY KEY,
         civilian_id BIGINT,
         cyberware_id BIGINT,
